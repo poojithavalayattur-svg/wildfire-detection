@@ -10,7 +10,11 @@ st.title("🔥 AIoT Wildfire Detection System")
 st.write("Real-time Fire & Smoke Detection using YOLOv8")
 
 # Load model
-model = YOLO("runs/detect/train/weights/best.pt")
+import os
+from ultralytics import YOLO
+
+model_path = os.path.join("runs", "detect", "train", "weights", "best.pt")
+model = YOLO(model_path)
 
 # Sidebar
 st.sidebar.title("Options")
